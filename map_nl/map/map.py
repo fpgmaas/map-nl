@@ -4,7 +4,6 @@ import folium
 import geopandas as gpd
 import pandas as pd
 
-from map_nl.color import get_color_function
 from map_nl.geojson.getter import GeoJsonGetter
 
 GEO_JSON_URL = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-netherlands-postcode-pc4/exports/geojson?lang=en&timezone=Europe%2FBerlin"
@@ -19,7 +18,7 @@ class MapNL:
         self.map_center = [52.1326, 5.2913]
         self.map_zoom_start = 8  # Initial zoom level
 
-    def plot(self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str):
+    def plot(self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str, **kwargs):
         """Create a Folium map."""
 
         df = self._prepare_input_data(df, pc4_column_name, value_column_name)
@@ -29,9 +28,11 @@ class MapNL:
         # Initialize the map
         m = folium.Map(location=self.map_center, zoom_start=self.map_zoom_start)
 
+        default_args = {"weight": 1, "opacity": 1, "color": "black", "dashArray": "3", "fillOpacity": 0.7}
+        plot_args = {**default_args, **kwargs}
+
         # Add GeoJSON layer
-        style = self._get_style_function(df, value_column_name)
-        folium.GeoJson(pc4_geojson, name="Postal Code 4 Map", style_function=style).add_to(m)
+        folium.GeoJson(pc4_geojson, **plot_args).add_to(m)
 
         # Add layer control
         folium.LayerControl().add_to(m)
@@ -54,19 +55,3 @@ class MapNL:
         gdf = gpd.GeoDataFrame.from_features(geojson["features"])
         merged_gdf = gdf.merge(df, on="pc4_code", how="left")
         return merged_gdf.to_json()
-
-    @staticmethod
-    def _get_style_function(df: pd.DataFrame, value_column_name: str):
-        get_color = get_color_function(df[value_column_name])
-
-        def style(feature):
-            return {
-                "fillColor": get_color(feature.get("properties").get(value_column_name)),
-                "weight": 1,
-                "opacity": 1,
-                "color": "black",
-                "dashArray": "3",
-                "fillOpacity": 0.7,
-            }
-
-        return style
