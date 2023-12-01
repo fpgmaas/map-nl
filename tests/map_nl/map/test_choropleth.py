@@ -1,6 +1,6 @@
 import pandas as pd
 
-from map_nl.map.choropleth import ChoroplethMapNL
+from map_nl import ChoroplethMapNL
 from tests.utils import run_within_dir
 
 

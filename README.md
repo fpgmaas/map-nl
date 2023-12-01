@@ -1,5 +1,5 @@
 <p align="center" style="margin: 30px 30px 40px 30px;">
-  <img alt="map nl" height="150" src="./docs/static/nl.png">
+  <img alt="map nl" height="150" src="https://github.com/fpgmaas/map-nl/blob/main/docs/static/nl.png?raw=true">
 </p>
 
 # map-nl
@@ -40,7 +40,7 @@ To create a choropleth map of the average WOZ-value in the Netherlands, you coul
 
 ```py
 import pandas as pd
-from map_nl.map.choropleth import ChoroplethMapNL
+from map_nl import ChoroplethMapNL
 
 df = pd.read_csv("https://raw.githubusercontent.com/fpgmaas/map-nl/main/data/woz-pc4.csv")
 

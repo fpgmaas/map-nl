@@ -1,6 +1,6 @@
 import pandas as pd
 
-from map_nl.map.map import MapNL
+from map_nl import MapNL
 from tests.utils import run_within_dir
 
 

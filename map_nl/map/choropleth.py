@@ -39,6 +39,7 @@ class ChoroplethMapNL(BaseMapNL):
             "fill_color": "OrRd",
             "fill_opacity": 0.8,
             "line_opacity": 0.2,
+            "nan_fill_color": "white",
         }
         choropleth_args = {**default_args, **kwargs}
 
