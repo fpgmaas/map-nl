@@ -29,7 +29,8 @@ class BaseMapNL(ABC):
             url (str, optional): URL to download the GeoJSON file. Defaults to a file from https://public.opendatasoft.com.
             data_dir (str, optional): Directory to save the downloaded GeoJSON file. Defaults to `.map_nl`.
             geojson_simplify_tolerance (float | None, optional): Tolerance level for GeoJSON simplification.
-                If None, no simplification is performed. Defaults to None.
+                If None, no simplification is performed. Lower values lead to simpler maps. Sensible values for
+                coordinates stored in degrees are in the range of 0.0001 to 10. Defaults to None.
             **kwargs: Additional keyword arguments to be passed to the folium.Map() function. By default, only `location`
                 and `zoom_start` are passed with default values.
         """

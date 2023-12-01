@@ -10,7 +10,9 @@
 [![Commit activity](https://img.shields.io/github/commit-activity/m/fpgmaas/map-nl)](https://img.shields.io/github/commit-activity/m/fpgmaas/map-nl)
 [![License](https://img.shields.io/github/license/fpgmaas/map-nl)](https://img.shields.io/github/license/fpgmaas/map-nl)
 
-_map-nl_ is a Python package to help you quickly create PC4 maps of the Netherlands, i.e. maps at the postal code 4 level. While that is already possible without _map-nl_, this package aims to make the process as simple as possible. It automatically downloads the geojson files, so all you need to provide is a dataset wtih two columns: PC4 codes and a related value to plot on the map. The package uses [folium](https://github.com/python-visualization/folium) to create the map.
+_map-nl_ is a Python package to help you quickly create [PC4](https://public.opendatasoft.com/explore/dataset/georef-netherlands-postcode-pc4/table/) maps of the Netherlands. While that is already possible without _map-nl_, this package aims to make the process as simple as possible. It automatically downloads the geojson files, so all you need to provide is a dataset wtih two columns: One containing PC4 codes and one with a related value to plot on the map. \_map_nl then uses [folium](https://github.com/python-visualization/folium) to plot the map.
+
+For an example map created with _map-nl_, see [here](./static/choropleth.html).
 
 ## Quickstart
 
