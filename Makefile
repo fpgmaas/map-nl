@@ -43,7 +43,7 @@ build-and-publish: build publish ## Build and publish.
 
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
-	@poetry run mkdocs build -s
+	@poetry run mkdocs build
 
 .PHONY: docs
 docs: ## Build and serve the documentation
