@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import folium
 import geopandas as gpd
 import pandas as pd

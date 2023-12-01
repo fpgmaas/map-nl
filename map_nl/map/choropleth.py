@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import folium
 import pandas as pd
 

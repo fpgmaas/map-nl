@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from map_nl.foo import foo
 
 
