@@ -1,29 +1,15 @@
-import json
+import shutil
+from pathlib import Path
 
 import pytest
 
 
-# Fixture to create a GeoJSON file
+# Fixture to provide the file '.map_nl/nl-pc4-map.geojson' within the temporary directory.
+# It contains geojson for two PC4's.
 @pytest.fixture()
-def geojson_file(tmp_path):
-    # Create a GeoJSON structure
-    geojson = {
-        "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "geometry": {"type": "Point", "coordinates": [-105.01621, 39.57422]},
-                "properties": {"name": "Sample Point"},
-            }
-        ],
-    }
-
-    # Define file path
-    geojson_file = tmp_path / "example.geojson"
-
-    # Write the GeoJSON to a file
-    with open(geojson_file, "w") as f:
-        json.dump(geojson, f)
-
-    # Yield the path to the file for the test
-    return geojson_file
+def nl_pc4_geojson_sample(tmp_path: Path) -> Path:
+    source_file = "tests/data/nl-pc4-map.geojson"
+    dest_dir = tmp_path / ".map_nl"
+    dest_dir.mkdir(parents=True)
+    shutil.copy(source_file, dest_dir)
+    return Path(dest_dir) / "nl-pc4-map.geojson"
