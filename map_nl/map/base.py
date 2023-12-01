@@ -7,7 +7,7 @@ from map_nl.geojson.getter import GeoJsonGetter
 
 GEO_JSON_URL = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-netherlands-postcode-pc4/exports/geojson?lang=en&timezone=Europe%2FBerlin"
 DATA_DIR = ".map_nl"
-DEFAULT_MAP_ARGS = {"location": [52.1326, 5.2913], "zoom_start": 8}
+DEFAULT_MAP_ARGS = {"location": [52.1326, 5.2913], "zoom_start": 8, "tiles": "cartodb positron"}
 
 
 class BaseMapNL(ABC):
