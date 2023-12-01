@@ -36,7 +36,7 @@ pip install map-nl
 
 ### Usage
 
-To create a chropleth map of the average WOZ-value in the Netherlands, you could run the following:
+To create a choropleth map of the average WOZ-value in the Netherlands, you could run the following:
 
 ```py
 import pandas as pd
