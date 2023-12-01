@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import folium
-import geopandas as gpd
+import folium  # type: ignore
+import geopandas as gpd  # type: ignore
 import pandas as pd
 
 from map_nl.map.base import BaseMapNL
@@ -10,7 +10,7 @@ from map_nl.map.base import BaseMapNL
 class MapNL(BaseMapNL):
     """A class for creating custom PC4 maps of the Netherlands using `folium.GeoJson`."""
 
-    def plot(self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str, **kwargs) -> folium.Map:
+    def plot(self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str, **kwargs) -> folium.Map:  # type: ignore
         """Creates and adds a custom map layer to the Folium map instance.
 
         This method processes the input DataFrame and GeoJSON data to create a
@@ -74,13 +74,13 @@ class MapNL(BaseMapNL):
         return df
 
     @staticmethod
-    def _add_values_to_geojson(geojson, df) -> dict:
+    def _add_values_to_geojson(geojson: dict, df: pd.DataFrame) -> dict:
         gdf = gpd.GeoDataFrame.from_features(geojson["features"])
         merged_gdf = gdf.merge(df, on="pc4_code", how="left")
         return merged_gdf.to_json()
 
     @staticmethod
-    def _get_default_tooltip(value_column_name):
+    def _get_default_tooltip(value_column_name: str) -> folium.GeoJsonTooltip:
         return folium.GeoJsonTooltip(
             fields=["pc4_code", "gem_name", value_column_name],
             aliases=["PC4:", "Gemeente:", f"{value_column_name}:"],

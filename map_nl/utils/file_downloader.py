@@ -16,7 +16,7 @@ class FileDownloader:
         self,
         url: str,
         file_path: str | Path,
-    ):
+    ) -> None:
         """
         Args:
             url (str): The URL from where the file will be downloaded.
@@ -25,7 +25,7 @@ class FileDownloader:
         self.url = url
         self.file_path = Path(file_path)
 
-    def download(self):
+    def download(self) -> None:
         try:
             response = requests.get(self.url, stream=True, timeout=5)
             response.raise_for_status()  # This will raise an HTTPError if the status is 4xx or 5xx
@@ -41,5 +41,5 @@ class FileDownloader:
             logger.info("Download successful.")
 
         except requests.HTTPError as e:
-            logger.error(f"Failed to download {self.url}. Status code: {e.response.status_code}")
+            logger.error(f"Failed to download {self.url}. Status code: {e.response.status_code}")  # type: ignore
             raise Exception(f"Error downloading {self.url}: {e}") from None

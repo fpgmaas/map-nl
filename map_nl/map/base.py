@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import Any
 
-import folium
+import folium  # type: ignore
+import pandas as pd
 
 from map_nl.geojson.getter import GeoJsonGetter
 
@@ -19,13 +21,13 @@ class BaseMapNL(ABC):
     initializing a Folium map, and defining an abstract method for plotting.
     """
 
-    def __init__(
+    def __init__(  # type: ignore
         self,
         url: str = GEO_JSON_URL,
         data_dir: str = DATA_DIR,
         geojson_simplify_tolerance: float | None = None,
         **kwargs,
-    ):
+    ) -> None:
         """
         Args:
             url (str, optional): URL to download the GeoJSON file. Defaults to a file from https://public.opendatasoft.com.
@@ -44,7 +46,7 @@ class BaseMapNL(ABC):
         self.m = folium.Map(**map_args)
 
     @abstractmethod
-    def plot(self):
+    def plot(self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str, **kwargs: Any) -> folium.Map:
         raise NotImplementedError()
 
     def _get_geojson(self) -> dict:

@@ -59,7 +59,7 @@ class GeoJsonGetter:
         new_file_name = f"{file_name}-simplified-{self.geojson_simplify_tolerance}{file_ext}"
         return self.geojson_path.with_name(new_file_name)
 
-    def _simplify(self):
+    def _simplify(self) -> dict:
         """Simplifies the GeoJSON file based on the specified tolerance.
 
         If a simplified file already exists, it returns the content of that file.
@@ -74,7 +74,7 @@ class GeoJsonGetter:
             GeoJsonSimplifier(
                 input_file_path=self.geojson_path,
                 output_file_path=simplified_json_path,
-                tolerance=self.geojson_simplify_tolerance,
+                tolerance=self.geojson_simplify_tolerance,  # type: ignore
             ).simplify()
         logging.debug(
             f"File {simplified_json_path} already exists, so skipping simplification and returning the contents of that"

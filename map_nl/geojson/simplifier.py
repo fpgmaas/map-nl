@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-import geopandas as gpd
-import topojson as tp
+import geopandas as gpd  # type: ignore
+import topojson as tp  # type: ignore
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +34,7 @@ class GeoJsonSimplifier:
         self.output_file_path = Path(output_file_path)
         self.tolerance = tolerance
 
-    def simplify(self):
+    def simplify(self) -> None:
         """Performs the simplification process on the input GeoJSON file.
 
         Reads the input GeoJSON file, simplifies it using the specified tolerance,

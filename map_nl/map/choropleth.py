@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import folium
+import folium  # type: ignore
 import pandas as pd
 
 from map_nl.map.base import BaseMapNL
@@ -9,7 +9,7 @@ from map_nl.map.base import BaseMapNL
 class ChoroplethMapNL(BaseMapNL):
     """A class for creating Choropleth maps of the Netherlands using `folium.Choropleth`."""
 
-    def plot(
+    def plot(  # type: ignore
         self, df: pd.DataFrame, value_column_name: str, pc4_column_name: str, tooltip: bool = True, **kwargs
     ) -> folium.Map:
         """This method takes a pandas DataFrame with PC4-data and plots a Choropleth map based on these data.

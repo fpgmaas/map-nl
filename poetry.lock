@@ -2275,6 +2275,21 @@ test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)"]
 xml = ["lxml (>=4.8.0)"]
 
 [[package]]
+name = "pandas-stubs"
+version = "2.1.1.230928"
+description = "Type annotations for pandas"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "pandas_stubs-2.1.1.230928-py3-none-any.whl", hash = "sha256:992d97159e054ca3175ebe8321ac5616cf6502dd8218b03bb0eaf3c4f6939037"},
+    {file = "pandas_stubs-2.1.1.230928.tar.gz", hash = "sha256:ce1691c71c5d67b8f332da87763f7f54650f46895d99964d588c3a5d79e2cacc"},
+]
+
+[package.dependencies]
+numpy = {version = ">=1.26.0", markers = "python_version < \"3.13\""}
+types-pytz = ">=2022.1.1"
+
+[[package]]
 name = "pandocfilters"
 version = "1.5.0"
 description = "Utilities for writing pandoc filters in python"
@@ -3531,6 +3546,42 @@ files = [
 ]
 
 [[package]]
+name = "types-pytz"
+version = "2023.3.1.1"
+description = "Typing stubs for pytz"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-pytz-2023.3.1.1.tar.gz", hash = "sha256:cc23d0192cd49c8f6bba44ee0c81e4586a8f30204970fc0894d209a6b08dab9a"},
+    {file = "types_pytz-2023.3.1.1-py3-none-any.whl", hash = "sha256:1999a123a3dc0e39a2ef6d19f3f8584211de9e6a77fe7a0259f04a524e90a5cf"},
+]
+
+[[package]]
+name = "types-requests"
+version = "2.31.0.10"
+description = "Typing stubs for requests"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "types-requests-2.31.0.10.tar.gz", hash = "sha256:dc5852a76f1eaf60eafa81a2e50aefa3d1f015c34cf0cba130930866b1b22a92"},
+    {file = "types_requests-2.31.0.10-py3-none-any.whl", hash = "sha256:b32b9a86beffa876c0c3ac99a4cd3b8b51e973fb8e3bd4e0a6bb32c7efad80fc"},
+]
+
+[package.dependencies]
+urllib3 = ">=2"
+
+[[package]]
+name = "types-tqdm"
+version = "4.66.0.5"
+description = "Typing stubs for tqdm"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "types-tqdm-4.66.0.5.tar.gz", hash = "sha256:74bd7e469238c28816300f72a9b713d02036f6b557734616430adb7b7e74112c"},
+    {file = "types_tqdm-4.66.0.5-py3-none-any.whl", hash = "sha256:d2c38085bec440e8ad1e94e8619f7cb3d1dd0a7ee06a863ccd0610a5945046ef"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.8.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -3723,4 +3774,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "4796e127aa97697d9130f3326b5d45c6b6be22198071ac25b1372d60bbde7990"
+content-hash = "a25ae7585e2fa9462f3c8088b0ba40123102ea77edce86ae95973e52f242aa02"
