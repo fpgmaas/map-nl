@@ -63,3 +63,5 @@ By default, a geojson file with PC4 polygons is downloaded from [Opendatasoft.co
 ---
 
 Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
+
+Icon created by <a href="https://www.flaticon.com/free-icons/holland" title="holland icons">Roundicons - Flaticon</a>
