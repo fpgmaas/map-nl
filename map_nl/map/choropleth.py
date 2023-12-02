@@ -16,7 +16,7 @@ class ChoroplethMapNL(BaseMapNL):
         Any **kwargs are passed on to `folium.Choropleth`. For example, to change the fill color, run
 
         ```
-        m = ChloroplethMapNL(...).plot(..., fill_opacity=1)
+        m = ChoroplethMapNL(...).plot(..., fill_opacity=1)
         ```
 
         Args:
