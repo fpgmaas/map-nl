@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "map_nl"
+name = "map-nl"
 version = "0.0.1"
 description = "Quickly create maps of the Netherlands in Python"
 authors = ["Florian Maas <ffpgmaas@gmail.com>"]
