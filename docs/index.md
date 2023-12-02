@@ -18,15 +18,13 @@ For an example map created with _map-nl_, see [here](https://fpgmaas.github.io/m
 
 ### Installation
 
-To add _map-nl_ to your project, run one of the following commands:
+To install _map-nl_, simply run:
 
 ```shell
-# Install with poetry
-poetry add map-nl
-
-# Install with pip
 pip install map-nl
 ```
+
+or a similar command for your dependency manager.
 
 ### Usage
 
