@@ -38,7 +38,7 @@ class ChoroplethMapNL(BaseMapNL):
             "data": df,
             "columns": [pc4_column_name, value_column_name],
             "key_on": "feature.properties.pc4_code",
-            "fill_color": "OrRd",
+            "fill_color": "Blues",
             "fill_opacity": 0.8,
             "line_opacity": 0.2,
             "nan_fill_color": "white",

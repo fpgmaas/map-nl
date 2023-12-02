@@ -38,7 +38,7 @@ from map_nl import ChoroplethMapNL
 
 df = pd.read_csv("https://raw.githubusercontent.com/fpgmaas/map-nl/main/data/woz-pc4.csv")
 
-m = ChoroplethMapNL(geojson_simplify_tolerance=0.001).plot(
+m = ChoroplethMapNL(geojson_simplify_tolerance=0.0001).plot(
     df,
     pc4_column_name="pc4",
     value_column_name="WOZ",
