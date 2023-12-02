@@ -10,7 +10,7 @@ copyright: Maintained by <a href="https://fpgmaas.com">Florian</a>.
 nav:
   - Home: index.md
   - Usage: usage.md
-  - Modules: modules.md
+  - API reference: modules.md
 
 plugins:
   - search
