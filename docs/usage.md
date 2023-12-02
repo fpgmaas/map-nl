@@ -42,9 +42,11 @@ m = ChoroplethMapNL(geojson_simplify_tolerance=0.0001).plot(
 )
 ```
 
+For more customization options, see the documentation of [`folium.Choropleth`](https://python-visualization.github.io/folium/latest/reference.html#folium.features.Choropleth).
+
 ## MapNL
 
-`ChoroplethMapNL` allows you to create a custom PC4 map of the Netherlands.
+`MapNL` allows you to create a custom PC4 map of the Netherlands.
 
 An example is shown below.
 
@@ -74,7 +76,7 @@ m.save("map.html")
 The above example will color any PC4-areas with a average WOZ above 500 green, blue if it is below 500, and grey if no average WOZ was found.
 
 Any other keyword-arguments passed to `plot()` are passed on to [`folium.GeoJson`](https://python-visualization.github.io/folium/latest/reference.html#folium.features.GeoJson). For example,
-in order to modify the default tooltip, youc and efine your own and provide that to the `plot()` method:
+in order to modify the default tooltip, you can define your own and provide that to the `plot()` method:
 
 ```py
 tooltip = folium.GeoJsonTooltip(
@@ -102,6 +104,8 @@ m = MapNL(geojson_simplify_tolerance=0.0001).plot(
 )
 ```
 
+For more customization options, see the documentation of [`folium.GeoJson`](https://python-visualization.github.io/folium/latest/reference.html#folium.features.GeoJson).
+
 ## Customizing the map
 
 Keyword arguments passed to the constructors of `MapNL` and `ChoroplethMapNL` are passed on to [`folium.Map`](https://python-visualization.github.io/folium/latest/reference.html#module-folium.folium). So for example,
@@ -110,3 +114,5 @@ in order to change the starting zoom level of the map, one could do:
 ```py
 m = ChoroplethMapNL(geojson_simplify_tolerance=0.0001, zoom_start=7)
 ```
+
+For more customization options, see the documentation of [`folium.Map`](https://python-visualization.github.io/folium/latest/reference.html#module-folium.folium).
