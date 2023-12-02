@@ -40,6 +40,8 @@ class BaseMapNL(ABC):
         self.geojson_path = Path(data_dir) / "nl-pc4-map.geojson"
         self.url = url
 
+        Path(data_dir).mkdir(parents=True, exist_ok=True)
+
         map_args = {**DEFAULT_MAP_ARGS, **kwargs}
         self.m = folium.Map(**map_args)
 
