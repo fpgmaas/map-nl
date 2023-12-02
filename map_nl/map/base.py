@@ -9,8 +9,6 @@ import pandas as pd
 
 from map_nl.geojson.getter import GeoJsonGetter
 
-GEO_JSON_URL = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-netherlands-postcode-pc4/exports/geojson?lang=en&timezone=Europe%2FBerlin"
-DATA_DIR = ".map_nl"
 DEFAULT_MAP_ARGS = {"location": [52.1326, 5.2913], "zoom_start": 8, "tiles": "cartodb positron"}
 
 
@@ -23,8 +21,8 @@ class BaseMapNL(ABC):
 
     def __init__(  # type: ignore
         self,
-        url: str = GEO_JSON_URL,
-        data_dir: str = DATA_DIR,
+        url: str = "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/georef-netherlands-postcode-pc4/exports/geojson?lang=en&timezone=Europe%2FBerlin",
+        data_dir: str = ".map_nl",
         geojson_simplify_tolerance: float | None = None,
         **kwargs,
     ) -> None:
@@ -58,5 +56,5 @@ class BaseMapNL(ABC):
             dict: The contents of the GeoJSON file, either in its original or simplified form.
         """
         return GeoJsonGetter(
-            url=GEO_JSON_URL, geojson_path=self.geojson_path, geojson_simplify_tolerance=self.geojson_simplify_tolerance
+            url=self.url, geojson_path=self.geojson_path, geojson_simplify_tolerance=self.geojson_simplify_tolerance
         ).get()

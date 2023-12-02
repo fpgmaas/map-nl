@@ -56,6 +56,10 @@ This will download the geojson file to the `.map_nl` directory, simplify the geo
 
 For more details, see [the documentation](https://fpgmaas.github.io/map-nl).
 
+### Attribution & License
+
+By default, a geojson file with PC4 polygons is downloaded from [Opendatasoft.com](https://public.opendatasoft.com/explore/dataset/georef-netherlands-postcode-pc4/information/). The file is provided by Central Bureau voor de Statistiek & Basisregistratie Kadaster and usage of this file falls under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+
 ---
 
 Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).
